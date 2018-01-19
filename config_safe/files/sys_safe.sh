@@ -54,13 +54,13 @@ source /etc/profile
 #sed -i  "s/#UseDNS yes/UseDNS no/" /etc/ssh/sshd_config
 
 # limit chmod important commands
-chmod 700 /bin/ping
+#chmod 700 /bin/ping
 chmod 700 /usr/bin/finger
 chmod 700 /usr/bin/who
 chmod 700 /usr/bin/w
 chmod 700 /usr/bin/locate
 chmod 700 /usr/bin/whereis
-chmod 700 /sbin/ifconfig
+#chmod 700 /sbin/ifconfig
 chmod 700 /usr/bin/pico
 chmod 700 /bin/vi
 chmod 700 /usr/bin/which

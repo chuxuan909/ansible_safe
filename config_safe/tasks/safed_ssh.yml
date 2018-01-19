@@ -1,0 +1,15 @@
+---
+  - name: modified port
+    raw: "sed -i 's/#Port .*/Port 11211/' /etc/ssh/sshd_config"
+  - name: modified uer try
+    raw: "sed -i 's/#MaxAuthTries 6/MaxAuthTries 6/' /etc/ssh/sshd_config"
+  - name: add login by keys
+    raw:  "{{ item }}"
+    with_items:
+        - sed -i 's/#RSAAuthentication .*/RSAAuthentication yes/' /etc/ssh/sshd_config
+        - sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+        - sed -i 's@#AuthorizedKeysFile.*@AuthorizedKeysFile     .ssh/authorized_keys@' /etc/ssh/sshd_config
+  - name: forbid login from Passwd
+    raw: "sed -i 's/PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config"
+  - name: Restart sshd server
+    service: name=sshd state=restarted 

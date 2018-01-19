@@ -1,0 +1,3 @@
+---
+  - include: safed_ssh.yml
+  - include: safed_sys.yml

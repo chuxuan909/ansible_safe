@@ -1,0 +1,3 @@
+---
+  - name: set sys safety
+    script: "sys_safe.sh"

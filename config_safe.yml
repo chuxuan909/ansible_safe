@@ -1,0 +1,7 @@
+---
+  - name: Config To Safe
+    hosts: test_server
+    remote_user: root
+    gather_facts: Ture
+    roles:
+      - config_safe
